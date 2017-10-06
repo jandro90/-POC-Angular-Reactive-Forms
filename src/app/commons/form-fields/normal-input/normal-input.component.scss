@@ -1,0 +1,15 @@
+@import '../../../../variables/colors.scss';
+
+input {
+	&.ng-valid.ng-touched {
+		border-left: 5px solid $valid;
+		background-color: rgba(7, 212, 7, 0.05)
+	}
+	&.ng-valid {
+		border-left: 5px solid $valid;
+	}
+	&.ng-invalid.ng-touched {
+		border-left: 5px solid $invalid;
+		background-color: rgba(207, 207, 7, 0.18)
+	}
+}

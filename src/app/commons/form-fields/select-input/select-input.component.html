@@ -1,0 +1,14 @@
+<div class="form-group row" [formGroup]="group">
+  <label for="city" class="col-2 col-form-label">{{nameField}} *
+    </label>
+
+  <div class="col-10">
+    <select class="form-control" 
+            type="text" 
+            [id]="field" 
+            [formControlName]="field">
+          <option value="" selected>Selecciona una ciudad</option>
+          <option *ngFor="let option of options" value="{{option}}">{{option}}</option>
+    </select>
+  </div>
+</div>

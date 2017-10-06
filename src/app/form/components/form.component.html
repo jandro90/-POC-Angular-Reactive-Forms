@@ -1,0 +1,83 @@
+<div class="container margin">
+
+  <form novalidate [formGroup]="modelForm">
+
+    <div formGroupName="person" class="border-form">
+      <h3 class="text-center">Datos Personales</h3>
+      <app-normal-input [group]="modelForm.get('person')"
+                        [field]="'name'"
+                        [inputType]="'text'"
+                        [placeHolder]="'Nombre...'"
+                        [nameField]="'Nombre'">
+      </app-normal-input>
+
+      <app-normal-input [group]="modelForm.get('person')"
+                        [field]="'lastName'"
+                        [inputType]="'text'"
+                        [placeHolder]="'Apellido...'"
+                        [nameField]="'Apellidos'">
+      </app-normal-input>
+
+      <app-normal-input [group]="modelForm.get('person')"
+                        [field]="'age'"
+                        [inputType]="'number'"
+                        [placeHolder]="'Edad...'"
+                        [nameField]="'Edad'">
+      </app-normal-input>
+    </div>
+
+    <div formGroupName="personalInformation" 
+         class="border-form">
+      <h3 class="text-center">Informacion Personal</h3>
+      <app-normal-input [group]="modelForm.get('personalInformation')"
+                        [field]="'email'"
+                        [inputType]="'text'"
+                        [placeHolder]="'alguien@example.com...'"
+                        [nameField]="'Email'">
+      </app-normal-input>
+
+      <app-normal-input [group]="modelForm.get('personalInformation')"
+                        [field]="'phone'"
+                        [inputType]="'text'"
+                        [placeHolder]="'Telefono...'"
+                        [nameField]="'Telefono'">
+      </app-normal-input>
+
+      <app-select-input [group]="modelForm.get('personalInformation')"
+                        [options]="cities"
+                        [field]="'city'"
+                        [nameField]="'Ciudad'">
+      </app-select-input>
+    </div>
+
+    <div formGroupName="operations" 
+         class="border-form">
+      <h3 class="text-center">Operaciones</h3>
+      <app-normal-input [group]="modelForm.get('operations')"
+                        [field]="'firstNumber'"
+                        [inputType]="'number'"
+                        [placeHolder]="'introduce un numero'"
+                        [nameField]="'Primer Numero'">
+      </app-normal-input>
+
+      <app-normal-input [group]="modelForm.get('operations')"
+                        [field]="'secondNumber'"
+                        [inputType]="'number'"
+                        [placeHolder]="'introduce un segundo numero'"
+                        [nameField]="'Segundo Numero'">
+      </app-normal-input>
+
+      <app-normal-input [group]="modelForm.get('operations')"
+                        [field]="'resultNumber'"
+                        [inputType]="'number'"
+                        [nameField]="'Resultado'"
+                        *ngIf="modelForm.get('operations.firstNumber').valid &&
+                        modelForm.get('operations.secondNumber').valid">
+      </app-normal-input>
+    </div>
+    <button class="btn btn-primary float-right margin" 
+            [disabled]="!modelForm.valid" 
+            type="submit">Enviar
+  </button>
+  </form>
+</div>

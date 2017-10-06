@@ -1,0 +1,13 @@
+<div class="form-group row" [formGroup]="group">
+
+  <label [for]="field" class="col-2 col-form-label">{{nameField}} *
+</label>
+
+  <div class="col-10">
+    <input class="form-control"
+           [type]="inputType"
+           [id]="field" 
+           [placeholder]="placeHolder" 
+           [formControlName]="field">
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <form [formGroup]="modelEmailForm">
+    
+  <app-normal-input [group]="modelEmailForm"
+                    [field]="'email'"
+                    [inputType]="'text'"
+                    [placeHolder]="'Email'"
+                    [nameField]="'Email'">
+  </app-normal-input>
+    <button class="btn btn-primary float-right" 
+            [disabled]="!modelEmailForm.valid">Enviar</button>
+  </form>
+</div>

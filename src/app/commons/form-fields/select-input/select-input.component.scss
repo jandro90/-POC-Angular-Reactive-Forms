@@ -1,0 +1,13 @@
+@import '../../../../variables/colors.scss';
+
+select {
+	&.ng-invalid.ng-touched {
+		border-left: 5px solid $invalid;
+	}
+	&.ng-valid.ng-touched {
+		border-left: 5px solid $valid;
+	}
+	&.ng-valid {
+		border-left: 5px solid $valid;
+	}
+}
